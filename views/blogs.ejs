@@ -1,0 +1,42 @@
+<%- include ("header.ejs")%>
+
+<section id="banner">
+    <div class="container">
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis border border-light" style="border-radius: 50px!important; text-align: center;">
+            <div>
+                <h1 class="display-4 fst-italic text-capitalize">Blogs The Necessity</h1>
+                <p class="lead my-3">wjndkjwkvkbj</p>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row" role="listbox">
+                <%postsFound.forEach(function(post){%>
+                <div class="col-md-3 p-3">
+                    <div class="card">
+                        <img src="/digital.webp" alt="...">
+                        <div class="card-body">
+                            <hr class="hr text-light position-relative" style="width: 16rem;" />
+                            <h1><%=post.title%></h1>
+                            <p class="card-text"><%=post.content%></p>
+                            <a href="/Blogs/<%=post._id%>" class="btn btn-outline-light">Read More!</a>
+                        </div>
+                    </div>
+                </div>
+                <%});%>
+            </div>
+        </div>
+        <hr class="text-light py-5">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center pagination-lg">
+              <li class="page-item"><a class="page-link bg-dark" href="#"><span aria-hidden="true">&laquo;</span></a></li>
+              <li class="page-item"><a class="page-link bg-dark" href="#">1</a></li>
+              <li class="page-item"><a class="page-link bg-dark" href="#">2</a></li>
+              <li class="page-item"><a class="page-link bg-dark" href="#">3</a></li>
+              <li class="page-item"><a class="page-link bg-dark" href="#"><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+          </nav>
+    </div>
+</section>
+
+<%- include ("footer.ejs")%>
